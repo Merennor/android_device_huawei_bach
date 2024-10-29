@@ -17,23 +17,19 @@ VNDK_SP_LIBRARIES := \
     libbacktrace \
     libbase \
     libbcinfo \
-    libbinderthreadstate \
     libblas \
     libc++ \
     libcompiler_rt \
     libcutils \
-    libdexfile_support \
     libhardware \
     libhidlbase \
     libhidlmemory \
     libhidltransport \
-    libhwbinder_noltopgo \
     libhwbinder \
     libion \
     libjsoncpp \
     liblzma \
     libprocessgroup \
-    libunwind \
     libunwindstack \
     libutils \
     libutilscallstack \
@@ -42,7 +38,6 @@ VNDK_SP_LIBRARIES := \
 EXTRA_VENDOR_LIBRARIES := \
     android.hidl.base@1.0 \
     vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.cryptfshw@1.0
 
 #-------------------------------------------------------------------------------
 # VNDK Modules
