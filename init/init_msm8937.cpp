@@ -19,7 +19,6 @@
 #include "property_service.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 using namespace std;
 
 const char *APP_INFO = "/proc/app_info";
@@ -72,17 +71,17 @@ void vendor_load_properties()
     fin.close();
 
     if ((buf.find("BAH-W09") != string::npos) || (buf.find("CPN-W09") != string::npos)) {
-        android::init::property_set("persist.radio.noril", "1");
+        property_override("persist.radio.noril", "1");
     }
 
     if ((buf.find("BAH-AL00") != string::npos) || (buf.find("BAH-L01") != string::npos) || (buf.find("BAH-L09") != string::npos) || (buf.find("CPN-AL00") != string::npos) || (buf.find("CPN-L0J") != string::npos) || (buf.find("CPN-L09") != string::npos)) {
 	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
 	property_override("ro.telephony.default_network", "9");
 	property_override("ro.telephony.lteOnCdmaDevice", "1");
-	android::init::property_set("rild.libargs", "-d /dev/smd0");
-	android::init::property_set("persist.vendor.data.mode", "concurrent");
-	android::init::property_set("persist.data.netmgrd.qos.enable", "true");
-	android::init::property_set("ro.vendor.use_data_netmgrd", "true");
+	property_override("rild.libargs", "-d /dev/smd0");
+	property_override("persist.vendor.data.mode", "concurrent");
+	property_override("persist.data.netmgrd.qos.enable", "true");
+	property_override("ro.vendor.use_data_netmgrd", "true");
     }
 
     if ((buf.find("BAH-AL00") != string::npos) || (buf.find("BAH-L01") != string::npos) || (buf.find("BAH-L09") != string::npos) || (buf.find("BAH-W09") != string::npos)) {
