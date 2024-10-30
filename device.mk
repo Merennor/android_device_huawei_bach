@@ -330,6 +330,9 @@ PRODUCT_COPY_FILES += \
 # Properties
 -include $(VENDOR_PATH)/vendor_prop.mk
 
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
